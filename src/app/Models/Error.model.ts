@@ -1,16 +1,6 @@
 export class Error{
-    id:number;
-    title:string;
-    description:string;
-    level:string;
-    status:string;
 
 
-    constructor(id:number,title:string,description:string,level:string,status:string){
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.level = level;
-        this.status = status;
+    constructor(public id:number,public title:string,public description:string,public level:string,public status:string){
     }
 }
