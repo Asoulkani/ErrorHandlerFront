@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Error } from '../Models/Error.model';
 
 @Component({
   selector: '[app-error-list]',
@@ -7,12 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorListComponent implements OnInit {
 
+  @Input() errors: Error[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
-  }
-  showErrorDetail(){
-    console.log("i have been clicked");
   }
 
 }
