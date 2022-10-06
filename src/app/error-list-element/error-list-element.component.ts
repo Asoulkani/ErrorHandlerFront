@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,EventEmitter,Output } from '@angular/core';
 import { Error } from '../Models/Error.model';
 
 @Component({
@@ -10,7 +10,10 @@ export class ErrorListElementComponent implements OnInit {
 
   spanLevelClass: string = "bg-danger";
   spanStatusClass: string = "bg-danger";
-  @Input() error: Error = new Error(0,"","","Urgent","Open");
+
+  @Output() elementChecked: EventEmitter<Error> = new EventEmitter<Error>();
+  @Output() elementUnChecked: EventEmitter<Error> = new EventEmitter<Error>();
+  @Input("appError") error: Error = new Error(0,"","","Urgent","Open");
 
   constructor() { 
 
@@ -54,6 +57,15 @@ export class ErrorListElementComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  checked(event: Event){
+    if((<HTMLInputElement>event.target).checked){
+      this.elementChecked.emit(this.error);
+    }
+    else
+    this.elementUnChecked.emit(this.error);
+      
   }
 
 
