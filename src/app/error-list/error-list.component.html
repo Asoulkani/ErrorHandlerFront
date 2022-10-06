@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" app-error-list-element *ngFor="let err of app.error" [error]="err"></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" app-error-list-element *ngFor="let err of app.error" [appError]="err" (elementChecked)="addElementChecked($event)" (elementUnChecked)="removeElementChecked($event)"></li>
         </ul>
     </div>
 </div>
