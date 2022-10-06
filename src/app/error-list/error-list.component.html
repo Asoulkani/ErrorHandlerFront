@@ -1,10 +1,10 @@
 <div class="card mb-4 rounded-2 shadow-sm ">
     <div class="card-header py-3 ">
-      <h4 class="my-0 fw-normal">Prov App</h4>
+      <h4 class="my-0 fw-normal">{{app.name}}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" app-error-list-element *ngFor="let err of errors" [error]="err"></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" app-error-list-element *ngFor="let err of app.error" [error]="err"></li>
         </ul>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Application } from '../Models/application.model';
 import { Error } from '../Models/Error.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { Error } from '../Models/Error.model';
 })
 export class ErrorListComponent implements OnInit {
 
-  @Input() errors: Error[] = [];
+  @Input() app: Application = new Application(0,"");
 
   constructor() { }
 
